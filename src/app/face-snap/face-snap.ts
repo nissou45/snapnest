@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { FaceSnap } from '../models/snap.model';
 
 @Component({
   selector: 'app-face-snap',
@@ -9,21 +10,32 @@ import { DatePipe } from '@angular/common';
   styleUrl: './face-snap.scss',
 })
 export class FaceSnapComponent implements OnInit {
-  title!: string;
-  description!: string;
-  createAt!: Date;
-  snaps!: number;
-  imageUrl!: string;
+  @Input() faceSnap!: FaceSnap;
+
+  snapButtonText!: string;
+  userHasSnapped!: boolean;
 
   ngOnInit(): void {
-    this.title = 'Salon Bohème';
-    this.description =
-      'Un coin lecture chaleureux avec des plantes, des coussins en velours et une lumière tamisée.';
-    this.createAt = new Date();
-    this.snaps = 0;
-    this.imageUrl = 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800';
+    this.snapButtonText = "J'adore !";
+    this.userHasSnapped = false;
   }
-  onAddSnap(): void {
-    this.snaps++;
+  onSnap(): void {
+    if (this.userHasSnapped) {
+      this.unSnap();
+    } else {
+      this.snap();
+    }
+  }
+
+  snap() {
+    this.faceSnap.snaps++;
+    this.snapButtonText = 'Ne plus adorer';
+    this.userHasSnapped = true;
+  }
+
+  unSnap() {
+    this.faceSnap.snaps--;
+    this.snapButtonText = "J'adore !";
+    this.userHasSnapped = false;
   }
 }

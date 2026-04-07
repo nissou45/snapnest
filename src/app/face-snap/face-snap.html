@@ -4,4 +4,5 @@
   <p>{{ description }}</p>
   <p>Publié le {{ createAt | date: 'dd/MM/yyyy' }}</p>
   <p>🌿 {{ snaps }} personnes adorent ce décor</p>
+  <button (click)="onAddSnap()">J'adore !</button>
 </div>

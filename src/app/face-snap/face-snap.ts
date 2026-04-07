@@ -23,4 +23,7 @@ export class FaceSnapComponent implements OnInit {
     this.snaps = 0;
     this.imageUrl = 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800';
   }
+  onAddSnap(): void {
+    this.snaps++;
+  }
 }

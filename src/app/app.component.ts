@@ -20,12 +20,14 @@ export class AppComponent implements OnInit {
       new Date(),
       10,
     );
+    this.mySnap.setLocation('Paris');
     this.myOtherSnap = new FaceSnap(
       'Bureau Minimaliste',
       'Un espace de travail épuré avec une belle lumière naturelle.',
       'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=800',
       new Date(),
-      0,
+      156,
     );
+    this.myOtherSnap.setLocation('à la montagne');
   }
 }

@@ -55,4 +55,13 @@
       color: white;
     }
   }
+  &.snapped {
+    background-color: rgba(144, 238, 144, 0.4);
+    color: darkgreen;
+    box-shadow: lightgreen 3px 3px 7px;
+
+    &:active {
+      box-shadow: lightgreen 0 0 5px;
+    }
+  }
 }

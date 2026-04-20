@@ -1,4 +1,4 @@
-<div class="face-snap-card">
+<app-card [isSnapped]="userHasSnapped">
   <h2>{{ faceSnap.title | uppercase }}</h2>
   <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
   <p>{{ faceSnap.description }}</p>
@@ -6,6 +6,18 @@
     <p>📍 {{ faceSnap.location }}</p>
   }
   <p>{{ faceSnap.snaps }} snaps</p>
-  <button (click)="onSnap()">{{ snapButtonText }}</button>
-  <button routerLink="/face-snaps">BACK</button>
-</div>
+  
+  <div class="button-container">
+    <app-button 
+      [label]="snapButtonText" 
+      buttonType="card" 
+      (clicked)="onSnap()">
+    </app-button>
+
+    <app-button 
+      [label]="uiConstants.BACK" 
+      buttonType="card" 
+      [routerLink]="'/' + routes.FACE_SNAPS">
+    </app-button>
+  </div>
+</app-card>

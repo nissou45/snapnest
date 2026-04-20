@@ -1,19 +1,22 @@
+@use 'styles/variables' as *;
+
 header {
   text-align: center;
-  background-color: #eee;
-  margin-bottom: 20px;
+  background-color: $header-bg;
+  margin-bottom: $spacing-btn-margin;
   padding: 10px;
 }
 a {
   margin: 0 10px;
-  color: #333;
+  color: $link-color;
   text-decoration: none;
+  font-family: $font-sans;
   &:hover {
     text-decoration: underline;
   }
 }
 
 .active {
-  color: #666;
+  color: $link-active-color;
   text-decoration: underline;
 }

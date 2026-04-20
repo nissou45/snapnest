@@ -1,4 +1,8 @@
-<div class="face-snap-card">
+<app-card>
   <h2>{{ faceSnap.title | uppercase }}</h2>
-  <button (click)="onViewFaceSnap()">VIEW</button>
-</div>
+  <app-button 
+    [label]="uiConstants.VIEW" 
+    buttonType="card" 
+    (clicked)="onViewFaceSnap()">
+  </app-button>
+</app-card>

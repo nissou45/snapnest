@@ -2,18 +2,19 @@ import { Routes } from '@angular/router';
 import { FaceSnapListComponent } from './face-snap-list/face-snap-list';
 import { LandingPage } from './landing-page/landing-page';
 import { SingleFaceSnapComponent } from './single-face-snap/single-face-snap';
+import { APP_ROUTES } from './core/constants/face-snaps.constants';
 
 export const routes: Routes = [
   {
-    path: 'face-snaps/:id',
+    path: `${APP_ROUTES.FACE_SNAPS}/:id`,
     component: SingleFaceSnapComponent,
   },
   {
-    path: 'face-snaps',
+    path: APP_ROUTES.FACE_SNAPS,
     component: FaceSnapListComponent,
   },
   {
-    path: '',
+    path: APP_ROUTES.LANDING,
     component: LandingPage,
   },
 ];

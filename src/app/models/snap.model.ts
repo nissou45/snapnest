@@ -3,6 +3,7 @@ import { SnapType } from './snap-type-type';
 export class FaceSnap {
   location?: string;
   id: string;
+
   constructor(
     public title: string,
     public description: string,
@@ -10,8 +11,9 @@ export class FaceSnap {
     public createAt: Date,
     public snaps: number,
   ) {
-    this.id = crypto.randomUUID().substring(0, 8); //UUID= universally unique id
+    this.id = crypto.randomUUID().substring(0, 8);
   }
+
   addSnap(): void {
     this.snaps++;
   }
@@ -23,9 +25,11 @@ export class FaceSnap {
       this.removeSnap();
     }
   }
+
   removeSnap(): void {
     this.snaps--;
   }
+
   setLocation(location: string): void {
     this.location = location;
   }

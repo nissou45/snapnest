@@ -1,3 +1,5 @@
-@for (faceSnap of faceSnaps; track faceSnap) {
-  <app-face-snap [faceSnap]="faceSnap"></app-face-snap>
-}
+<div class="list-container">
+  @for (faceSnap of faceSnaps(); track faceSnap.id) {
+    <app-face-snap [faceSnap]="faceSnap"></app-face-snap>
+  }
+</div>

@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+import { FACE_SNAPS_UI, APP_ROUTES } from '../core/constants/face-snaps.constants';
+import { AppButtonComponent } from '../shared/components/button/button.component';
 
 @Component({
   selector: 'app-landing-page',
-  imports: [RouterLink],
+  standalone: true,
+  imports: [AppButtonComponent],
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.scss',
 })
 export class LandingPage {
+  readonly uiConstants = FACE_SNAPS_UI;
+
   constructor(private router: Router) {}
   onContinue() {
-    // Handle continue action
-    this.router.navigateByUrl('/face-snaps');
+    this.router.navigateByUrl(`/${APP_ROUTES.FACE_SNAPS}`);
   }
 }

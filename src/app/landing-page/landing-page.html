@@ -1,6 +1,10 @@
 <div class="landing-block">
   <img class="logo" src="logo.svg" alt="SnapNest logo" height="80" />
   <div class="landing-links">
-    <button (click)="onContinue()">Continuer vers SnapNest</button>
+    <app-button 
+      [label]="uiConstants.CONTINUE" 
+      buttonType="global" 
+      (clicked)="onContinue()">
+    </app-button>
   </div>
 </div>

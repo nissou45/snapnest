@@ -4,10 +4,14 @@ import { FaceSnap } from '../models/snap.model';
 import { FaceSnapsService } from '../services/face-snaps.service';
 import { SnapType } from '../models/snap-type-type';
 import { UpperCasePipe } from '@angular/common';
+import { FACE_SNAPS_UI, APP_ROUTES } from '../core/constants/face-snaps.constants';
+import { AppButtonComponent } from '../shared/components/button/button.component';
+import { AppCardComponent } from '../shared/components/card/card.component';
 
 @Component({
   selector: 'app-single-face-snap',
-  imports: [RouterLink, UpperCasePipe],
+  standalone: true,
+  imports: [RouterLink, UpperCasePipe, AppButtonComponent, AppCardComponent],
   templateUrl: './single-face-snap.html',
   styleUrl: './single-face-snap.scss',
 })
@@ -15,6 +19,8 @@ export class SingleFaceSnapComponent implements OnInit {
   faceSnap!: FaceSnap;
   snapButtonText!: string;
   userHasSnapped!: boolean;
+  readonly uiConstants = FACE_SNAPS_UI;
+  readonly routes = APP_ROUTES;
 
   constructor(
     private faceSnapsService: FaceSnapsService,
@@ -24,11 +30,10 @@ export class SingleFaceSnapComponent implements OnInit {
   ngOnInit(): void {
     this.prepareInterface();
     this.getFaceSnap();
-    const faceSnapId = this.route.snapshot.params['id'];
   }
 
   private prepareInterface() {
-    this.snapButtonText = "J'adore!";
+    this.snapButtonText = this.uiConstants.SNAP;
     this.userHasSnapped = false;
   }
 
@@ -41,6 +46,6 @@ export class SingleFaceSnapComponent implements OnInit {
     const snapType: SnapType = this.userHasSnapped ? 'unsnap' : 'snap';
     this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, snapType);
     this.userHasSnapped = !this.userHasSnapped;
-    this.snapButtonText = this.userHasSnapped ? "Je n'adore plus" : "J'adore !";
+    this.snapButtonText = this.userHasSnapped ? this.uiConstants.UNSNAP : this.uiConstants.SNAP;
   }
 }

@@ -1,8 +1,11 @@
+@use 'styles/variables' as *;
+
 .landing-block {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: $font-sans;
 }
 
 .landing-links {
@@ -11,8 +14,8 @@
 }
 .logo {
   display: block;
-  margin: 0 auto 20px;
-  border: 2px solid #2d2d2d;
-  outline: 4px solid #2d2d2d;
+  margin: 0 auto $spacing-btn-margin;
+  border: 2px solid $logo-color;
+  outline: 4px solid $logo-color;
   outline-offset: 3px;
 }

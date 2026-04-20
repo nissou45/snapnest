@@ -1,9 +1,7 @@
 <header>
-  <img src="logo.svg" alt="SnapNest logo" height="40" />
+  <h1>Snapface</h1>
   <nav>
-    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-      >Accueil</a
-    >
-    <a routerLink="face-snaps" routerLinkActive="active">Nos interieurs</a>
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a [routerLink]="routes.FACE_SNAPS" routerLinkActive="active">FaceSnaps</a>
   </nav>
 </header>

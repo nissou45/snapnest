@@ -1,0 +1,5 @@
+<svg width="240" height="56" viewBox="0 0 240 56" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="24,38 24,22 36,12 48,22 48,38" fill="none" stroke="#2d2d2d" stroke-width="1.2" stroke-linejoin="round"/>
+  <rect x="30" y="28" width="12" height="10" fill="none" stroke="#2d2d2d" stroke-width="1"/>
+  <text x="62" y="37" font-family="Georgia, serif" font-size="26" font-weight="400" fill="#2d2d2d" letter-spacing="1">SnapNest</text>
+</svg>

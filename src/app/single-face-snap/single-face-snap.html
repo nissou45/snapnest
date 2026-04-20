@@ -1,0 +1,11 @@
+<div class="face-snap-card">
+  <h2>{{ faceSnap.title | uppercase }}</h2>
+  <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
+  <p>{{ faceSnap.description }}</p>
+  @if (faceSnap.location) {
+    <p>📍 {{ faceSnap.location }}</p>
+  }
+  <p>{{ faceSnap.snaps }} snaps</p>
+  <button (click)="onSnap()">{{ snapButtonText }}</button>
+  <a routerLink="/face-snaps">BACK</a>
+</div>

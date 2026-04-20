@@ -1,18 +1,4 @@
-<div class="face-snap-card" [ngClass]="{ snapped: userHasSnapped }">
-  <!-- <h1>{{ myPrice | currency }}</h1> -->
-  <!-- <p>{{ 344.36 | currency: 'EUR' }}</p> -->
-  <!-- <p>{{ 344.36 | currency: 'EUR' : 'code' }}</p> -->
+<div class="face-snap-card">
   <h2>{{ faceSnap.title | uppercase }}</h2>
-  @if (faceSnap.location) {
-    <p>Location : {{ faceSnap.location }}</p>
-  } @else {
-    <p>Localisation non spécfiée</p>
-  }
-  <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
-  <p>{{ faceSnap.description }}</p>
-  <p>Publié le {{ faceSnap.createAt | date: 'dd/MM/yyyy' }}</p>
-  <p>🌿 {{ faceSnap.snaps }} personnes adorent ce décor</p>
-  <button (click)="onSnap()">
-    {{ snapButtonText }}
-  </button>
+  <button (click)="onViewFaceSnap()">VIEW</button>
 </div>

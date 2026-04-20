@@ -50,20 +50,28 @@ export class FaceSnapsService {
       34,
     ),
   ];
-  getFaceSnaps(): FaceSnap[] {
-    return [...this.faceSnaps];
-  }
+
   constructor() {
     this.faceSnaps[0].setLocation('Paris');
     this.faceSnaps[1].setLocation('Lyon');
     this.faceSnaps[2].setLocation('Bordeaux');
     this.faceSnaps[4].setLocation('Copenhagen');
   }
-  snapFaceSnapById(faceSnapId: string, snapType: SnapType): void {
+
+  getFaceSnaps(): FaceSnap[] {
+    return [...this.faceSnaps];
+  }
+
+  getFaceSnapById(faceSnapId: string): FaceSnap {
     const foundFaceSnap = this.faceSnaps.find((faceSnap) => faceSnap.id === faceSnapId);
     if (!foundFaceSnap) {
       throw new Error('FaceSnap not found!');
     }
-    foundFaceSnap.snap(snapType);
+    return foundFaceSnap;
+  }
+
+  snapFaceSnapById(faceSnapId: string, snapType: SnapType): void {
+    const faceSnap = this.getFaceSnapById(faceSnapId);
+    faceSnap.snap(snapType);
   }
 }
